@@ -48,7 +48,7 @@ RUN     mkdir /src/grafana                                                      
         mkdir /opt/grafana                                                                                    &&\
         wget https://grafanarel.s3.amazonaws.com/builds/grafana-3.0.4-1464167696.linux-x64.tar.gz -O /src/grafana.tar.gz &&\
         tar -xzf /src/grafana.tar.gz -C /opt/grafana --strip-components=1                                     &&\
-        rm /src/grafana.tar.gz
+        rm -f /src/grafana.tar.gz
 
 
 # ----------------- #
@@ -100,6 +100,11 @@ EXPOSE  8126
 
 # Graphite web port
 EXPOSE 81
+
+# graphite
+EXPOSE 2003
+EXPOSE 2004
+EXPOSE 7002
 
 
 

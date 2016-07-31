@@ -2,12 +2,15 @@ version: '2'
 services:
   grafana_graphite:
     build: .
-    image: kamon/grafana_graphite
+    image: tuomassalo/grafana_graphite:latest
     container_name: kamon-grafana-dashboard
     ports:
       - '80:80'
       - '81:81'
       - '8125:8125/udp'
+      - '2003:2003'
+      - '2004:2004'
+      - '7002:7002'
       - '8126:8126'
     volumes:
       - ./data/whisper:/opt/graphite/storage/whisper
