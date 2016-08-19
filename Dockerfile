@@ -50,12 +50,13 @@ RUN     mkdir /src/grafana                                                      
         tar -xzf /src/grafana.tar.gz -C /opt/grafana --strip-components=1                                     &&\
         rm -f /src/grafana.tar.gz
 
+RUN     apt-get -y install nano jed
 
 # ----------------- #
 #   Configuration   #
 # ----------------- #
 
-# Confiure StatsD
+# Configure StatsD
 ADD     ./statsd/config.js /src/statsd/config.js
 
 # Configure Whisper, Carbon and Graphite-Web
