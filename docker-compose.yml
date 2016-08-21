@@ -2,7 +2,7 @@ version: '2'
 services:
   grafana_graphite:
     build: .
-    image: tuomassalo/grafana_graphite:latest
+    image: tuomassalo/grafana_graphite:1_0_alpha
     container_name: kamon-grafana-dashboard
     ports:
       - '80:80'
